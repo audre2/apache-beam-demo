@@ -1,0 +1,4 @@
+{"name":"Alice", "age":20, "sex":"F"},
+{"name":"Bob", "age":22, "sex":"M"},
+{"name":"Charlie", "age":25, "sex":"M"}
+ola, ola
