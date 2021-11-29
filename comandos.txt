@@ -1,0 +1,17 @@
+mvn compile exec:java -Dexec.mainClass=br.com.examples.beam.WordCount \
+     -Dexec.args="--inputFile=./sample.txt --output=counts"
+
+mvn compile exec:java \
+  -Dexec.mainClass=com.examples.pubsub.streaming.PubSubToGcs \
+  -Dexec.cleanupDaemonThreads=false \
+  -Dexec.args=" \
+    --project=my-project-1472045707343 \
+    --region=southamerica-east1 \
+    --inputTopic=projects/my-project-1472045707343/topics/poc-teste-topic \
+    --output=gs://dataflow-demo-pubsub/samples/output \
+    --gcpTempLocation=gs://dataflow-demo-pubsub/temp \
+    --runner=DataflowRunner \
+    --windowSize=2"
+	
+mvn compile exec:java -Dexec.mainClass=br.com.examples.beam.DealingWithBadData \
+     -Dexec.args="--inputFile=./user.txt --output=outputSuccess --deadLetter=outputFail"
